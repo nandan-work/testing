@@ -1,0 +1,2818 @@
+{
+  "statusCode": 200,
+  "body": {
+    "total": 30,
+    "hasNext": true,
+    "hasPrevious": false,
+    "results": [
+      {
+        "retrieveContentURLs": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "_id": "99eba017-380d-4225-a03c-4b2c2263b922",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-25T18:07:10.473Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-25T18:07:59.847Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-25T18:07:59.847Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-25T18:07:59.847Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T18:07:59.847Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-25T18:08:55.593Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-25T18:09:16.229Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-25T18:09:33.835Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-25T18:10:03.320Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-25T18:14:13.690Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T18:14:13.690Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-25T18:14:56.107Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-25T18:15:17.193Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMSCompleted",
+            "message": "All possible DestinationPayload have been sent to OneCMS. No further data will be sent during this run.",
+            "when": "2023-10-25T18:15:34.237Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-25T18:16:02.608Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed",
+            "when": "2023-10-25T18:16:47.859Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended",
+            "when": "2023-10-25T18:16:47.859Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-25T18:07:10.473Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-ddm-staging.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse%26url%3D{{$[0]}}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions1.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{},\"secrets\":{\"dev-ghbulk-data-pipeline:transform\":[\"keycloak\",\"qa\"]}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{}},\"dryRun\":false}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "Secrets": {
+                "dev-ghbulk-data-pipeline:transform": ["keycloak", "qa"]
+              },
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": false,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {
+          "data-item": 2
+        },
+        "PreserveUDFAsDestinationPayloadFailProgress": {
+          "data-item": 2
+        },
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {},
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 7,
+          "generic-data-item": 0
+        },
+        "_id": "5e721c1c-0d05-459f-bad8-5d2275bc0750",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by nandan.ramesh@dotdashmdp.com idling waiting for its turn to start.",
+            "when": "2023-10-24T18:10:11.538Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-24T18:10:59.666Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-24T18:10:59.666Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-24T18:10:59.666Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T18:10:59.666Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-24T18:11:55.422Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-24T18:12:16.333Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-24T18:12:33.680Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-24T18:13:01.653Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-24T18:17:02.437Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T18:17:02.437Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-24T18:17:56.011Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-24T18:18:16.749Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-24T18:19:02.156Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-24T21:09:48.832Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by sgall@dash.corp",
+            "when": "2023-10-24T21:09:52.904Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-24T21:09:52.904Z"
+          }
+        ],
+        "createdBy": "nandan.ramesh@dotdashmdp.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-24T18:10:11.538Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1D5beiH7lOkrwUNmOlh602VeHgHKbepqkybQsEskuOgg/edit#gid=0\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc={$[0]}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{},\"dryRun\":false}}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1D5beiH7lOkrwUNmOlh602VeHgHKbepqkybQsEskuOgg/edit#gid=0"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": true,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 7
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadFailProgress": {},
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {
+          "data-item": 7
+        },
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 7,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "_id": "7a624862-9efe-4e43-bccd-f403e95d80b4",
+        "paused": true,
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-25T17:41:12.115Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-25T17:41:59.538Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-25T17:41:59.538Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-25T17:41:59.538Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T17:41:59.538Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-25T17:42:55.479Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-25T17:43:16.493Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-25T17:43:33.624Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-25T17:44:01.916Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-25T17:48:02.326Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T17:48:02.326Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-25T17:48:56.083Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-25T17:49:17.321Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMSCompleted",
+            "message": "All possible DestinationPayload have been sent to OneCMS. No further data will be sent during this run.",
+            "when": "2023-10-25T17:49:34.293Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-25T17:50:02.388Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed",
+            "when": "2023-10-25T17:50:47.811Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended",
+            "when": "2023-10-25T17:50:47.811Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-25T18:04:37.714Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-25T17:41:12.115Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-ddm-staging.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse%26url%3D{{$[0]}}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions1.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{},\"secrets\":{\"dev-ghbulk-data-pipeline:transform\":[\"keycloak\",\"qa\"]}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{}},\"dryRun\":false}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "Secrets": {
+                "dev-ghbulk-data-pipeline:transform": ["keycloak", "qa"]
+              },
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": false,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {
+          "data-item": 2
+        },
+        "PreserveUDFAsDestinationPayloadFailProgress": {
+          "data-item": 2
+        },
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {},
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 1,
+          "generic-data-item": 0
+        },
+        "_id": "ca19e007-04fc-4434-91df-ecaea5eedd71",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by nandan.ramesh@dotdashmdp.com idling waiting for its turn to start.",
+            "when": "2023-10-23T21:58:28.777Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-23T21:58:59.726Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-23T21:58:59.726Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-23T21:58:59.726Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-23T21:58:59.726Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-23T21:59:55.612Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-23T22:00:16.560Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-23T22:00:33.787Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-23T22:01:01.528Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-23T22:05:13.599Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-23T22:05:13.599Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-23T22:05:56.201Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-23T22:06:16.703Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-23T22:07:02.699Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-24T21:10:26.253Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by sgall@dash.corp",
+            "when": "2023-10-24T21:10:28.191Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-24T21:10:28.191Z"
+          }
+        ],
+        "createdBy": "nandan.ramesh@dotdashmdp.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-23T21:58:28.777Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1faZeVqHabF-Au-oOIr3QH9MUUK2S0HIbxT11_-n4yU0/edit#gid=0\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc={$[0]}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{},\"dryRun\":true}}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1faZeVqHabF-Au-oOIr3QH9MUUK2S0HIbxT11_-n4yU0/edit#gid=0"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": true,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 1
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadFailProgress": {},
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {
+          "data-item": 1
+        },
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 1,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "_id": "48f2a3b1-8af5-4f7a-8e37-aac5e2f235bc",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-27T17:43:10.829Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-27T17:43:59.513Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-27T17:43:59.513Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-27T17:43:59.513Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-27T17:43:59.513Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-27T17:44:55.501Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-27T17:45:16.272Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-27T17:45:33.659Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-27T17:46:01.539Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-27T17:49:20.241Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by sgall@dash.corp",
+            "when": "2023-10-27T17:49:24.778Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-27T17:49:24.821Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-27T17:43:10.829Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-ddm-staging.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse%26url%3D{{$[0]}}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions1.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{},\"secrets\":{\"ghbulk-data-pipeline:transform\":[\"ghbulk\",\"transform\",\"qa\"]}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{}}}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "Secrets": {
+                "ghbulk-data-pipeline:transform": ["ghbulk", "transform", "qa"]
+              },
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": true,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {
+          "data-item": 2
+        },
+        "PreserveUDFAsDestinationPayloadFailProgress": {
+          "data-item": 2
+        },
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {},
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "_id": "a60f7a2b-3c5e-4c6d-9a18-71cefb392187",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-24T20:29:38.195Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-24T20:29:59.528Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-24T20:29:59.528Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-24T20:29:59.528Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T20:29:59.528Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-24T20:30:55.393Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-24T20:31:16.402Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-24T20:31:33.799Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-24T20:32:01.419Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-24T20:33:06.297Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by sgall@dash.corp",
+            "when": "2023-10-24T20:33:08.773Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-24T20:33:08.773Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-24T20:29:38.195Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit#gid=0\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc={$[0]}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{},\"dryRun\":true}}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit#gid=0"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": false,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadFailProgress": {},
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {
+          "data-item": 2
+        },
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "_id": "d560fe12-7ed3-497d-b2b0-2bbd2125d52e",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-24T21:17:37.432Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-24T21:17:59.638Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-24T21:17:59.638Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-24T21:17:59.638Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T21:17:59.638Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-24T21:18:55.445Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-24T21:19:16.244Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-24T21:19:33.559Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-24T21:20:01.499Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-24T21:24:13.981Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T21:24:13.981Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-24T21:25:00.665Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-24T21:25:21.778Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-24T21:26:02.030Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By jchou1271@meredith.com",
+            "when": "2023-10-24T22:17:24.366Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by jchou1271@meredith.com",
+            "when": "2023-10-24T22:17:27.997Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-24T22:17:28.041Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-24T21:17:37.432Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc={$[0]}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{},\"dryRun\":false}}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": true,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadFailProgress": {},
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {
+          "data-item": 1
+        },
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 2
+        },
+        "_id": "28146567-4214-4fc7-b0f0-0c71e4aeea3b",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-25T18:56:52.416Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-25T18:56:59.378Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-25T18:56:59.378Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-25T18:56:59.378Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T18:56:59.378Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-25T18:57:55.587Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-25T18:58:16.299Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-25T18:58:33.584Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-25T18:59:01.384Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-25T19:03:15.901Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T19:03:15.901Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-25T19:03:55.832Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-25T19:04:16.938Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMSCompleted",
+            "message": "All possible DestinationPayload have been sent to OneCMS. No further data will be sent during this run.",
+            "when": "2023-10-25T19:04:34.291Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-25T19:05:02.663Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed",
+            "when": "2023-10-25T19:05:47.627Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended",
+            "when": "2023-10-25T19:05:47.627Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-25T18:56:52.416Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-ddm-staging.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse%26url%3D{{$[0]}}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions1.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{},\"secrets\":{\"ghbulk-data-pipeline:transform\":[\"keycloak\",\"qa\"]}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{}},\"dryRun\":false}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "Secrets": {
+                "ghbulk-data-pipeline:transform": ["keycloak", "qa"]
+              },
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": false,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {
+          "data-item": 2
+        },
+        "PreserveUDFAsDestinationPayloadFailProgress": {
+          "data-item": 2
+        },
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {},
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 1,
+          "generic-data-item": 0
+        },
+        "_id": "482de076-466b-469b-8992-7ac91a51ddfe",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by nandan.ramesh@dotdashmdp.com idling waiting for its turn to start.",
+            "when": "2023-10-24T18:06:47.845Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-24T18:06:59.367Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-24T18:06:59.367Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-24T18:06:59.367Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T18:06:59.367Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-24T18:07:55.342Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayload",
+            "message": "Began preserving UDF payloads as DestinationPayload format.",
+            "when": "2023-10-24T18:08:16.380Z"
+          },
+          {
+            "action": "SendDestinationPayloadToOneCMS",
+            "message": "Began sending DestinationPayload to UDF Import api.",
+            "when": "2023-10-24T18:08:33.769Z"
+          },
+          {
+            "action": "TwoStagesDiffRreport",
+            "message": "Began preserve destination response for metadata payload format.",
+            "when": "2023-10-24T18:09:01.457Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetchCompleted",
+            "message": "All possible sheet rows have been registered.",
+            "when": "2023-10-24T18:13:01.870Z"
+          },
+          {
+            "action": "retrieveContentURLsCompleted",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-24T18:13:01.870Z"
+          },
+          {
+            "action": "SourceDataDownloadCompleted",
+            "message": "All possible Source UDF payloads have downloaded. No further UDF download will be done during this run.",
+            "when": "2023-10-24T18:13:56.157Z"
+          },
+          {
+            "action": "PreserveUDFAsDestinationPayloadCompleted",
+            "message": "All possible SourceData UDF payloads preserved as DestinationPayload (UDF format). No further preserving will be done during this run.",
+            "when": "2023-10-24T18:14:17.093Z"
+          },
+          {
+            "action": "TwoStagesDiffRreportCompleted",
+            "message": "All possible DestinationPayloadResponse have been preserved.",
+            "when": "2023-10-24T18:15:02.157Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-24T21:10:14.852Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by sgall@dash.corp",
+            "when": "2023-10-24T21:10:19.715Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-24T21:10:19.765Z"
+          }
+        ],
+        "createdBy": "nandan.ramesh@dotdashmdp.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-24T18:06:47.845Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1faZeVqHabF-Au-oOIr3QH9MUUK2S0HIbxT11_-n4yU0/edit#gid=0\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc={$[0]}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{},\"dryRun\":true}}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1faZeVqHabF-Au-oOIr3QH9MUUK2S0HIbxT11_-n4yU0/edit#gid=0"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": true,
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 1
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadFailProgress": {},
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {
+          "data-item": 1
+        },
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 1,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      },
+      {
+        "retrieveContentURLs": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "_id": "d2ad03e8-7af8-4b29-aa49-68c24985c6e5",
+        "stage": [
+          {
+            "action": "scheduled",
+            "message": "Migration request created by sgall@dotdash.com idling waiting for its turn to start.",
+            "when": "2023-10-25T18:53:19.895Z"
+          },
+          {
+            "action": "started",
+            "message": "Migration pipeline reached its turn to run (good luck!).",
+            "when": "2023-10-25T18:53:59.737Z"
+          },
+          {
+            "action": "began",
+            "message": "Migration process has began.",
+            "when": "2023-10-25T18:53:59.737Z"
+          },
+          {
+            "action": "SpreadsheetQueryFetch",
+            "message": "Began fetching rows from source sheet.",
+            "when": "2023-10-25T18:53:59.737Z"
+          },
+          {
+            "action": "retrieveContentURLs",
+            "message": "All possible Source URLs have been registered.",
+            "when": "2023-10-25T18:53:59.737Z"
+          },
+          {
+            "action": "SourceDataDownload",
+            "message": "Began fetching UDF data from Source CMS.",
+            "when": "2023-10-25T18:54:55.413Z"
+          },
+          {
+            "action": "paused",
+            "message": "Paused By sgall@dash.corp",
+            "when": "2023-10-25T18:55:02.543Z"
+          },
+          {
+            "action": "completed",
+            "message": "Migration run completed using dashboard by sgall@dash.corp",
+            "when": "2023-10-25T18:55:07.678Z"
+          },
+          {
+            "action": "ended",
+            "message": "Migration process ended.",
+            "when": "2023-10-25T18:55:07.718Z"
+          }
+        ],
+        "createdBy": "sgall@dotdash.com",
+        "slackCustomConfig": {},
+        "scheduled": "2023-10-25T18:53:19.895Z",
+        "runType": {
+          "runLabel": "greenhouse-bulk initiated run"
+        },
+        "EnvConfig": {
+          "MigrationPipeline": [
+            "spreadsheet-fetch-items",
+            "content-stage2-download-source-udf",
+            "content-stage3-preserve-source-udf-as-destination-payload",
+            "two-stages-diff-report",
+            "content-stage4-deliver-payload-to-destination"
+          ],
+          "SlackBotEnabled": false,
+          "MigrationTags": [
+            {
+              "val": "non-prod-run",
+              "title": "isProd"
+            },
+            {
+              "val": "greenhouse",
+              "title": "brand"
+            },
+            {
+              "val": "bulk-runtime",
+              "title": "env"
+            }
+          ],
+          "RunsType": "run",
+          "SourceEnvKeys": ["gh", "dev"],
+          "DestinationDataDeliveryConcurrency": 30,
+          "env": "bulk-runtime",
+          "DestinationEnvKeys": ["selene", "dev"],
+          "shouldSkipAllowedStages": "false",
+          "enabled": true,
+          "AdminActions": [
+            {
+              "Task": "StagePauseToggle: spreadsheet-fetch-items",
+              "Label": "Toggle Stage Pause state: spreadsheet-fetch-items"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage2-download-source-udf",
+              "Label": "Toggle Stage Pause state: content-stage2-download-source-udf"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage3-preserve-source-udf-as-destination-payload",
+              "Label": "Toggle Stage Pause state: content-stage3-preserve-source-udf-as-destination-payload"
+            },
+            {
+              "Task": "StagePauseToggle: two-stages-diff-report",
+              "Label": "Toggle Stage Pause state: two-stages-diff-report"
+            },
+            {
+              "Task": "StagePauseToggle: content-stage4-deliver-payload-to-destination",
+              "Label": "Toggle Stage Pause state: content-stage4-deliver-payload-to-destination"
+            }
+          ],
+          "EnabledFeatures": [
+            "enable-external-transformation",
+            "exclude-pipeline-payload-metadata",
+            "selene-post-using-put-endpoint",
+            "support-source-data-url-template",
+            "support-runtime-delivery-spec",
+            "gh-recheck-sourcedata-before-delivery"
+          ],
+          "RunsIndex": "runs",
+          "SourceCMSLabel": "Greenhouse ddm-staging",
+          "AdditionalRunInfo": "{\"version\":1,\"input\":[{\"sourceUrl\":\"https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing\",\"sourceType\":\"GSHEET\",\"sourceDataUrlTemplate\":\"https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-ddm-staging.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse%26url%3D{{$[0]}}\"}],\"transform\":{\"externalTransformation\":{\"transformationEndpoint\":\"https://apollo-bulk-actions1.a-ue1.dotdash.com/api/bulk-actions/transform\",\"httpMethod\":\"POST\",\"httpHeaders\":{},\"secrets\":{\"ghbulk-data-pipeline:transform\":[\"keycloak\",\"qa\"]}}},\"deliver\":{\"deliveryEndpoint\":\"https://selene-ddm-staging.a-ue1.dotdash.com/document\",\"clientId\":\"ghba-pipeline-????\",\"handleMultipleRevisions\":true,\"httpMethod\":\"POST\",\"httpHeaders\":{}},\"dryRun\":\"false\"}",
+          "ItemsIndex": "migration-2023-week43-v4",
+          "SourceCMSContentTypes": ["spreadsheet-item"],
+          "DestinationCMSLabel": "Selene ddm-staging",
+          "ActiveContinuousMigrations": false,
+          "PipelineRunnerVersion": "6",
+          "brand": "greenhouse",
+          "StageTransitions": [
+            {
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "SpreadsheetData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:GoogleSheet": ["data-services", "google-sheet", "dev"]
+              },
+              "StageName": "spreadsheet-fetch-items",
+              "DestinationEnvironmentURLOriginPrefix": "https://pipev6-data-pipeline.commerce.meredithcorp.io/migrations/selene-api-proxy?doc=https%3A%2F%2Fselene-dataservices-dev.a-ue1.dotdash.com%2Fdocuments%3Fstate%3DDRAFT%26state%3DPREVIEW%26state%3DPENDING%26state%3DACTIVE%26activeVersion%3DALL%26sort%3DLASTMODIFIED%26includesummaries%3Dfalse",
+              "StageActionCompletedName": "SpreadsheetQueryFetchCompleted",
+              "SourceSheets": [
+                "https://docs.google.com/spreadsheets/d/1Y1frmBQhqCT06s8H5ryypGwEzRgcoM0z6ziExf7qi58/edit?usp=sharing"
+              ],
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SpreadsheetQueryFetch",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "PaginationSize": 500,
+              "ListingEndpointStage": true,
+              "StageActionCompletionDependenciesToWaitForAnyOne": []
+            },
+            {
+              "AdditionalItemsloadLoops": 100,
+              "paused": false,
+              "StageActionStartName": "SourceDataDownload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "SourceData",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage2-download-source-udf",
+              "DownloadRequestHeaderAccept": "application/json",
+              "StageActionCompletedName": "SourceDataDownloadCompleted",
+              "StageActionCompletionDependenciesToWaitForAnyOne": [
+                "retrieveContentURLsCompleted",
+                "GraphQueryFetchCompleted",
+                "DeionSearchItemsCompleted",
+                "SpreadsheetQueryFetchCompleted"
+              ]
+            },
+            {
+              "ConcurrencyLimit": 50,
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationPayload",
+              "FieldDataOverrideDeepMerge": {},
+              "Secrets": {
+                "ghbulk-data-pipeline:transform": ["keycloak", "qa"]
+              },
+              "StageName": "content-stage3-preserve-source-udf-as-destination-payload",
+              "Timeout": 120,
+              "StageActionCompletedName": "PreserveUDFAsDestinationPayloadCompleted",
+              "SourceDataReadField": "SourceData",
+              "MemoryLimit": 7168,
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "PreserveUDFAsDestinationPayload",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "StageLabelOverride": "Transformation",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SourceDataDownloadCompleted"]
+            },
+            {
+              "DiffLeft": "SourceData",
+              "paused": false,
+              "DistinctionEnvironmentKeys": ["common"],
+              "TransitionDataWriteField": "TwoStagesDiffRreport",
+              "StageName": "two-stages-diff-report",
+              "StageActionCompletedName": "TwoStagesDiffRreportCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "DiffRight": "DestinationPayload",
+              "AdditionalItemsloadLoops": 100,
+              "StageActionStartName": "TwoStagesDiffRreport",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Diff Report",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["SendDestinationPayloadToOneCMSCompleted"]
+            },
+            {
+              "paused": "false",
+              "EnvironmentHost": "https://selene-ddm-staging.a-ue1.dotdash.com/document",
+              "DistinctionEnvironmentKeys": ["gh", "dev"],
+              "TransitionDataWriteField": "DestinationResponse",
+              "Secrets": {
+                "dev-data-pipeline-dotdash:Selene": ["data-services", "test"]
+              },
+              "StageName": "content-stage4-deliver-payload-to-destination",
+              "StageActionCompletedName": "SendDestinationPayloadToOneCMSCompleted",
+              "SourceDataReadField": "DestinationPayload",
+              "AdditionalItemsloadLoops": 30,
+              "StageActionStartName": "SendDestinationPayloadToOneCMS",
+              "StageActionCompletionDependenciesToWaitForAll": [],
+              "DashboardLabelDestinationResponse": "Selene Response",
+              "StageLabelOverride": "Data Delivery To Selene",
+              "SeleneClientId": "ghba-pipeline-????",
+              "StageActionCompletionDependenciesToWaitForAnyOne": ["PreserveUDFAsDestinationPayloadCompleted"]
+            }
+          ]
+        },
+        "env": "bulk-runtime",
+        "contentTypes": ["data-item"],
+        "brand": "greenhouse",
+        "SendDestinationPayloadToOneCMSFailProgress": {},
+        "SpreadsheetQueryFetchSuccessProgress": {
+          "data-item": 2
+        },
+        "TwoStagesDiffRreportSuccessProgress": {},
+        "TwoStagesDiffRreportFailProgress": {},
+        "SourceDataDownloadSuccessProgress": {
+          "data-item": 2
+        },
+        "PreserveUDFAsDestinationPayloadFailProgress": {},
+        "SpreadsheetQueryFetchFailProgress": {},
+        "SourceDataDownloadFailProgress": {},
+        "SendDestinationPayloadToOneCMSSuccessProgress": {},
+        "PreserveUDFAsDestinationPayloadSuccessProgress": {},
+        "retrieveContentURLsSuccessProgress": {
+          "data-item": 2,
+          "generic-data-item": 0
+        },
+        "retrieveContentURLsFailProgress": {
+          "data-item": 0
+        }
+      }
+    ],
+    "aggsFilters": {}
+  }
+}
